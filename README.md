@@ -1,6 +1,6 @@
 <p align="center">
 	<img src="https://logospng.org/download/laravel/logo-laravel-256.png" height="100">
-	<img src="https://www.kindpng.com/picc/m/452-4529223_vue-js-logo-png-transparent-png.png" height="100">
+	<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/vuejs_original_wordmark_logo_icon_146305.png" height="100">
 </p>
 
 
@@ -32,7 +32,8 @@ INSERT INTO `developers` (`nome`, `sexo`, `idade`, `hobby`, `datanascimento`) VA
 
 
 
-## Instalação
+
+## Projeto
 Necessário ter Wampserver e Node instalado na máquina do usuário e configurar um VirtualHost para o projeto
 ```language
 <VirtualHost *:80>
@@ -50,6 +51,9 @@ No diretório do projeto rodar o comando Node:
 ```
 npm run dev
 ```
+
+## Nota
+Infelizmente ainda não tenho conhecimento suficiente para rodar a aplicação utilizando Docker, apesar de muitas tentativas, não obtive sucesso.
 
 ## Créditos
 Wesley Maciel Barbosa
