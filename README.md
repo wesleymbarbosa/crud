@@ -1,14 +1,14 @@
 <p align="center">
-	<img src="https://logospng.org/download/laravel/logo-laravel-256.png" height="100">
-	<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/vuejs_original_wordmark_logo_icon_146305.png" height="100">
+	<img src="https://logospng.org/download/laravel/logo-laravel-256.png" height="200">
+	<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/vuejs_logo_icon_169247.png" height="200">
 </p>
 
 
 ## CRUD WESLEY - Laravel & Vue SPA
 
-Simples CRUD de desenvolvedores desenvolvido em Laravel 8 e Vue JS e banco de dados MySql rodando no Wampserver para fins de aprendizado e também para o processo de recrutamento Gazin.
+Simples CRUD desenvolvido em Laravel 8 e Vue JS e banco de dados MySql rodando no Wampserver para fins de aprendizado e também para o processo de recrutamento Gazin.
 <p align="center">
-	<img src="https://i.ibb.co/c61PFYW/crudwesley.jpg" height="500">
+	<img src="https://i.ibb.co/zhrCdG9/crudwesley.gif" height="500">
 </p>
 
 
@@ -29,8 +29,6 @@ CREATE TABLE `developers` (
 INSERT INTO `developers` (`nome`, `sexo`, `idade`, `hobby`, `datanascimento`) VALUES 
 ('Wesley Maciel Barbosa', 'M', 33, 'Futebol', '1987-12-14');
 ```
-
-
 
 
 ## Projeto

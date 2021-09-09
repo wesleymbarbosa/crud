@@ -5,6 +5,13 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import {routes} from './routes';
+import moment from 'moment';
+
+Vue.filter('formatDate', function(value) {
+    if (value) {
+        return moment(String(value)).format('MM/DD/YYYY')
+    }
+});
 
 Vue.use(VueRouter);
 Vue.prototype.axios = axios;

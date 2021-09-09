@@ -21,7 +21,7 @@
                 <td class="text-center">{{ dev.sexo }}</td>
                 <td class="text-center">{{ dev.idade }}</td>
                 <td>{{ dev.hobby }}</td>
-                <td class="text-center">{{ dev.datanascimento }}</td>
+                <td class="text-center">{{ dev.datanascimento | formatDate }}</td>
                 <td class="text-center">
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'edit', params: { id: dev.id }}" class="btn btn-primary">Editar
