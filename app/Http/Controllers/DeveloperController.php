@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 class DeveloperController extends Controller
 {
     // all desenvolvedor
-    public function index()
+    public function index(Request $request)
     {
+        // dd($request->all());
         $desenvolvedor = Developer::all()->toArray();
 
         return array_reverse($desenvolvedor);
