@@ -38299,12 +38299,12 @@ var render = function() {
                     type: "radio",
                     name: "sexo",
                     id: "sexo_f",
-                    value: "S"
+                    value: "F"
                   },
-                  domProps: { checked: _vm._q(_vm.dev.sexo, "S") },
+                  domProps: { checked: _vm._q(_vm.dev.sexo, "F") },
                   on: {
                     change: function($event) {
-                      return _vm.$set(_vm.dev, "sexo", "S")
+                      return _vm.$set(_vm.dev, "sexo", "F")
                     }
                   }
                 }),
@@ -38636,12 +38636,12 @@ var render = function() {
                     type: "radio",
                     name: "sexo",
                     id: "sexo_f",
-                    value: "S"
+                    value: "F"
                   },
-                  domProps: { checked: _vm._q(_vm.dev.sexo, "S") },
+                  domProps: { checked: _vm._q(_vm.dev.sexo, "F") },
                   on: {
                     change: function($event) {
-                      return _vm.$set(_vm.dev, "sexo", "S")
+                      return _vm.$set(_vm.dev, "sexo", "F")
                     }
                   }
                 }),

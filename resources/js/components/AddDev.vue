@@ -15,7 +15,7 @@
                           <label class="form-check-label" for="sexo_m">Masculino</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="sexo" id="sexo_f" v-model="dev.sexo" value="S" >
+                          <input class="form-check-input" type="radio" name="sexo" id="sexo_f" v-model="dev.sexo" value="F" >
                           <label class="form-check-label" for="sexo_f">Feminino</label>
                         </div>
                     </div>
