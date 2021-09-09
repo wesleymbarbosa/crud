@@ -14,4 +14,6 @@ class Developer extends Model
         'hobby',
         'datanascimento',
     ];
+
+    public $timestamps = false;
 }
