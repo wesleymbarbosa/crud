@@ -2151,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.axios.post('http://crud/api/developers', this.dev).then(function (response) {
         return _this.$router.push({
-          nome: 'home'
+          name: 'home'
         }) // console.log(response.data)
         ;
       })["catch"](function (error) {
@@ -2275,24 +2275,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      book: {}
+      dev: {}
     };
   },
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/book/edit/".concat(this.$route.params.id)).then(function (response) {
-      _this.book = response.data; // console.log(response.data);
+    this.axios.get("http://crud/api/developers/".concat(this.$route.params.id)).then(function (response) {
+      _this.dev = response.data; // console.log(response.data);
     });
   },
   methods: {
-    updateBook: function updateBook() {
+    updateDev: function updateDev() {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/book/update/".concat(this.$route.params.id), this.book).then(function (response) {
+      this.axios.put("http://crud/api/developers/".concat(this.$route.params.id), this.dev).then(function (response) {
         _this2.$router.push({
           name: 'home'
         });
@@ -38122,13 +38141,13 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "nav-item nav-link", attrs: { to: "/" } },
-                  [_vm._v("Home")]
+                  [_vm._v("Início")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   { staticClass: "nav-item nav-link", attrs: { to: "/add" } },
-                  [_vm._v("Add Dev")]
+                  [_vm._v("Adicionar")]
                 )
               ],
               1
@@ -38186,7 +38205,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Add Dev")]),
+    _c("h3", { staticClass: "text-center" }, [
+      _vm._v("Adicionar Desenvolvedor")
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38523,7 +38544,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit Dev")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Editar Desenvolvedor")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -38533,58 +38554,179 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.updateBook.apply(null, arguments)
+                return _vm.updateDev.apply(null, arguments)
               }
             }
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Name")]),
+              _c("label", [_vm._v("Nome")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.book.name,
-                    expression: "book.name"
+                    value: _vm.dev.nome,
+                    expression: "dev.nome"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.book.name },
+                attrs: { type: "text", required: "" },
+                domProps: { value: _vm.dev.nome },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.book, "name", $event.target.value)
+                    _vm.$set(_vm.dev, "nome", $event.target.value)
                   }
                 }
               })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Author")]),
+              _c("label", [_vm._v("Sexo")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-check form-check-inline" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.dev.sexo,
+                      expression: "dev.sexo"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: {
+                    type: "radio",
+                    name: "sexo",
+                    id: "sexo_m",
+                    value: "M"
+                  },
+                  domProps: { checked: _vm._q(_vm.dev.sexo, "M") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.dev, "sexo", "M")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  { staticClass: "form-check-label", attrs: { for: "sexo_m" } },
+                  [_vm._v("Masculino")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-check form-check-inline" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.dev.sexo,
+                      expression: "dev.sexo"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: {
+                    type: "radio",
+                    name: "sexo",
+                    id: "sexo_f",
+                    value: "S"
+                  },
+                  domProps: { checked: _vm._q(_vm.dev.sexo, "S") },
+                  on: {
+                    change: function($event) {
+                      return _vm.$set(_vm.dev, "sexo", "S")
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  { staticClass: "form-check-label", attrs: { for: "sexo_f" } },
+                  [_vm._v("Feminino")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Idade")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.book.author,
-                    expression: "book.author"
+                    value: _vm.dev.idade,
+                    expression: "dev.idade"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.book.author },
+                attrs: { type: "number", min: "0", max: "100" },
+                domProps: { value: _vm.dev.idade },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.book, "author", $event.target.value)
+                    _vm.$set(_vm.dev, "idade", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Hobby")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.dev.hobby,
+                    expression: "dev.hobby"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.dev.hobby },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.dev, "hobby", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Data Nacimento")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.dev.datanascimento,
+                    expression: "dev.datanascimento"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "date" },
+                domProps: { value: _vm.dev.datanascimento },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.dev, "datanascimento", $event.target.value)
                   }
                 }
               })
@@ -38593,7 +38735,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Update Book")]
+              [_vm._v("Editar")]
             )
           ]
         )

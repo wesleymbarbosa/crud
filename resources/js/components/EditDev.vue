@@ -1,18 +1,37 @@
 <template>
     <div>
-        <h3 class="text-center">Edit Dev</h3>
+        <h3 class="text-center">Editar Desenvolvedor</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="updateBook">
+                <form @submit.prevent="updateDev">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" v-model="book.name">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" v-model="dev.nome" required>
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" class="form-control" v-model="book.author">
+                        <label>Sexo</label><br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="sexo" id="sexo_m" v-model="dev.sexo" value="M">
+                          <label class="form-check-label" for="sexo_m">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="sexo" id="sexo_f" v-model="dev.sexo" value="S" >
+                          <label class="form-check-label" for="sexo_f">Feminino</label>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Book</button>
+                    <div class="form-group">
+                        <label>Idade</label>
+                        <input type="number" class="form-control" v-model="dev.idade" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label>Hobby</label>
+                        <input type="text" class="form-control" v-model="dev.hobby">
+                    </div>
+                    <div class="form-group">
+                        <label>Data Nacimento</label>
+                        <input type="date" class="form-control" v-model="dev.datanascimento">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Editar</button>
                 </form>
             </div>
         </div>
@@ -23,21 +42,21 @@
     export default {
         data() {
             return {
-                book: {}
+                dev: {}
             }
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/book/edit/${this.$route.params.id}`)
+                .get(`http://crud/api/developers/${this.$route.params.id}`)
                 .then((response) => {
-                    this.book = response.data;
+                    this.dev = response.data;
                     // console.log(response.data);
                 });
         },
         methods: {
-            updateBook() {
+            updateDev() {
                 this.axios
-                    .post(`http://localhost:8000/api/book/update/${this.$route.params.id}`, this.book)
+                    .put(`http://crud/api/developers/${this.$route.params.id}`, this.dev)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });

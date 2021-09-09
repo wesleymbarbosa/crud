@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">Add Dev</h3>
+        <h3 class="text-center">Adicionar Desenvolvedor</h3>
         <div class="row">
             <div class="col-md-6">
                 <form @submit.prevent="addDev">
@@ -51,7 +51,7 @@
                 this.axios
                     .post('http://crud/api/developers', this.dev)
                     .then(response => (
-                        this.$router.push({nome: 'home'})
+                        this.$router.push({name: 'home'})
                         // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
