@@ -1,6 +1,6 @@
 <p align="center">
-	<img src="https://logospng.org/download/laravel/logo-laravel-256.png" height="200">
-	<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/vuejs_logo_icon_169247.png" height="200">
+	<img src="https://logospng.org/download/laravel/logo-laravel-256.png" height="120">
+	<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/vuejs_logo_icon_169247.png" height="120">
 </p>
 
 
@@ -8,7 +8,7 @@
 
 Simples CRUD desenvolvido em Laravel 8 e Vue JS e banco de dados MySql rodando no Wampserver para fins de aprendizado e também para o processo de recrutamento Gazin.
 <p align="center">
-	<img src="https://i.ibb.co/zhrCdG9/crudwesley.gif" height="500">
+	<img src="https://i.ibb.co/zhrCdG9/crudwesley.gif" height="400">
 </p>
 
 
